@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "shitcoding_gendiff"
-version = "0.0.1"
+version = "0.0.2"
 description = "Shitcoding project #2: Gendiff script: check differences between two files"
 authors = ["Shitcoder"]
 packages = [
