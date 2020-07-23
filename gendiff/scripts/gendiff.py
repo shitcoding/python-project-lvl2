@@ -27,7 +27,6 @@ def generate_diff(path_to_file1, path_to_file2):
     return output.lower()
 
 
-
 def main():
     """
     Generate diff string between first_file and second_file.
@@ -36,7 +35,9 @@ def main():
     parser = argparse.ArgumentParser(description='Generate diff')
     parser.add_argument('first_file', type=str)
     parser.add_argument('second_file', type=str)
-    parser.add_argument('-f', '--format', type=str, help='set format of output')
+    parser.add_argument('-f', '--format',
+                        type=str,
+                        help='set format of output')
     args = parser.parse_args()
 
     # Handling absolute and relative paths.
@@ -49,11 +50,10 @@ def main():
     else:
         path_to_file2 = os.path.abspath(args.second_file)
 
-
+    # Generating diff string.
     diff = generate_diff(path_to_file1, path_to_file2)
     print(diff)
 
 
 if __name__ == '__main__':
     main()
-
