@@ -1,10 +1,17 @@
 # -*- coding:utf-8 -*-
 
 import json
+import os
 
 
 def generate_diff(path_to_file1, path_to_file2):
     """Generate diff logic."""
+    # Handling absolute and relative paths.
+    if not os.path.isabs(path_to_file1):
+        path_to_file1 = os.path.abspath(path_to_file1)
+    if not os.path.isabs(path_to_file2):
+        path_to_file2 = os.path.abspath(path_to_file2)
+
     dict1 = json.load(open(path_to_file1))
     dict2 = json.load(open(path_to_file2))
     output = '{\n'
