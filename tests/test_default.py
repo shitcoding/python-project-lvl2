@@ -15,3 +15,16 @@ def test_default():
                 './tests/fixtures/1__before.json',
                 './tests/fixtures/1__after.json'
         )
+        assert expected == generate_diff(
+                './tests/fixtures/1__before.yaml',
+                './tests/fixtures/1__after.yaml'
+        )
+        assert expected == generate_diff(
+                './tests/fixtures/1__before.yaml',
+                './tests/fixtures/1__after.json'
+        )
+
+        assert expected == generate_diff(
+                './tests/fixtures/1__before.json',
+                './tests/fixtures/1__after.yaml'
+        )

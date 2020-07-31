@@ -1,16 +1,23 @@
 # -*- coding:utf-8 -*-
 
+import sys
 import json
+import yaml
 from gendiff.views import default_view
 
 
 def file_to_dict(file_abspath):
-    _dict = json.load(open(file_abspath))
+    filetype = file_abspath.split('.')[-1]
+    if filetype == 'json':
+        _dict = json.load(open(file_abspath))
+    elif filetype == 'yaml' or filetype == 'yml':
+        _dict = yaml.safe_load(open(file_abspath))
+    else:
+        sys.exit('Unsupported file type: Use .json, .yaml, .yml files')
     return _dict
 
 
 def compare_dicts(dict1, dict2):
-    """Return diff dictionary."""
     diff_dict = {}
     removed_keys = dict1.keys() - dict2.keys()
     added_keys = dict2.keys() - dict1.keys()
