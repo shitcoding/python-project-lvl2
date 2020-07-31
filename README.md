@@ -1,6 +1,7 @@
 # gendiff script
 [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
 [![Build Status](https://travis-ci.org/shitcoding/python-project-lvl2.svg?branch=master)](https://travis-ci.org/shitcoding/python-project-lvl2)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/50e489c5fd8398bb3da4/test_coverage)](https://codeclimate.com/github/shitcoding/python-project-lvl2/test_coverage)
 
 ---
 Generate diff between two JSON or YAML files.
